@@ -111,6 +111,7 @@ export function Services({
                             </div>
                           </div>
                           <button
+                            onClick={() => {}}
                             className="w-full bg-theme-primary text-white py-2 rounded-full hover:bg-theme-primary-hover transition-colors mt-4"
                           >
                             Book Now

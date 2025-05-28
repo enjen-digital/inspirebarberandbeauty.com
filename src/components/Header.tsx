@@ -44,20 +44,6 @@ const LocationToggle = ({ location, setLocation, className = '' }: {
 );
 
 export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrollToSection }: HeaderProps) {
-  //temp conditiion
-  const handleButtonClickTemp = () => {
-    console.log(location); // Ensure this logs the expected value
-
-    if (location.includes("East Towne")) {
-      window.open("https://www.vagaro.com/inspiresalon-easttowne/book-now", "_blank");
-    } else if (location.includes("Park Street")) {
-      window.open("https://www.vagaro.com/inspiresalon-parkst/book-now", "_blank");
-    } else {
-      window.location.href = "/"; // Internal navigation to home
-    }
-  };
-  //temp conditiion
-
   return (
     <header className="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
       <div className="container mx-auto px-4">
@@ -87,7 +73,7 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
 
           <div className="hidden md:block">
             <button 
-              onClick={() => handleButtonClickTemp()}
+              onClick={() => {}}
               className="bg-theme-primary text-white px-6 py-2 rounded-full hover:bg-theme-primary-hover transition-colors"
             >
               Book Now
@@ -125,7 +111,7 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
               <button onClick={() => scrollToSection('faq')} className="text-left text-gray-700 hover:text-theme-primary transition-colors py-2">FAQ</button>
               <button onClick={() => scrollToSection('contact')} className="text-left text-gray-700 hover:text-theme-primary transition-colors py-2">Contact</button>
               <button
-                onClick={() => handleButtonClickTemp()}
+                onClick={() => {}}
                 className="w-full bg-theme-primary text-white px-6 py-2 rounded-full hover:bg-theme-primary-hover transition-colors mt-2"
               >
                 Book Now

@@ -4,6 +4,7 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Stats } from "./components/Stats";
 import { Stylists } from "./components/Squad";
+import { Photos } from "./components/Photos";
 import { Services } from "./components/Services";
 import { FAQ } from "./components/FAQ";
 import { Footer } from "./components/Footer";
@@ -133,6 +134,7 @@ function App() {
                   setExpandedService={setExpandedService}
                   location={location}
                 />
+                <Photos />
                 <FAQ />
               </div>
             }

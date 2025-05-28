@@ -10,6 +10,13 @@ export const services = [
         maintenance: "4-6 weeks"
       },
       {
+        title: "Dreadlock Consultation",
+        basePrice: 25,
+        description: "Professional consultation to discuss your dreadlock goals, maintenance requirements, and styling options.",
+        duration: "30 min",
+        maintenance: "One-time"
+      },
+      {
         title: "Women's Haircut",
         basePrice: 45,
         description: "Women's haircut includes consultation, shampoo, precision cut, and style.",
@@ -22,6 +29,46 @@ export const services = [
         description: "Children's haircut includes shampoo, cut, and simple style.",
         duration: "30 min",
         maintenance: "4-6 weeks"
+      }
+    ]
+  },
+  {
+    category: "Dreadlocks",
+    items: [
+      {
+        title: "Starter Locs",
+        basePrice: 250,
+        description: "Professional installation of new dreadlocks using your natural hair. Includes consultation and initial styling.",
+        duration: "4-6 hours",
+        maintenance: "4-6 weeks"
+      },
+      {
+        title: "Loc Maintenance",
+        basePrice: 85,
+        description: "Retwisting and maintenance of existing dreadlocks. Includes cleansing and styling.",
+        duration: "1.5-2 hours",
+        maintenance: "4-6 weeks"
+      },
+      {
+        title: "Loc Repair",
+        basePrice: 65,
+        description: "Repair of damaged or loose dreadlocks. Price per loc.",
+        duration: "30-45 min",
+        maintenance: "As needed"
+      },
+      {
+        title: "Loc Extensions",
+        basePrice: 350,
+        description: "Installation of dreadlock extensions for added length or fullness.",
+        duration: "4-5 hours",
+        maintenance: "6-8 weeks"
+      },
+      {
+        title: "Loc Styling",
+        basePrice: 75,
+        description: "Creative styling of existing dreadlocks including updos, braiding, and special occasion styles.",
+        duration: "1 hour",
+        maintenance: "2-3 weeks"
       }
     ]
   },

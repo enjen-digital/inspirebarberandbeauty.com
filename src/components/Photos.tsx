@@ -68,20 +68,20 @@ export function Photos() {
           >
             {photos.map((photo, index) => (
               [...Array(2)].map((_, dupIndex) => (
-              <div 
-                key={index}
-                onMouseEnter={() => isPaused.current = true}
-                onMouseLeave={() => isPaused.current = false}
-                className="flex-none w-80 h-96 relative rounded-xl overflow-hidden shadow-lg transform transition-transform hover:scale-105"
-              >
-                <img
-                  src={photo}
-                  alt={`Gallery image ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-              </div>
-            ))}
+                <div 
+                  key={`${index}-${dupIndex}`}
+                  onMouseEnter={() => isPaused.current = true}
+                  onMouseLeave={() => isPaused.current = false}
+                  className="flex-none w-80 h-96 relative rounded-xl overflow-hidden shadow-lg transform transition-transform hover:scale-105"
+                >
+                  <img
+                    src={photo}
+                    alt={`Gallery image ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                </div>
+              ))
             ))}
           </div>
         </div>

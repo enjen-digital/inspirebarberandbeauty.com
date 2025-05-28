@@ -17,7 +17,6 @@ interface HeroApiResponse {
   }[];
 }
 
-
 export function Hero({ location, scrollToSection }: HeroProps) {
   const [heroImage, setHeroImage] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
@@ -46,20 +45,18 @@ export function Hero({ location, scrollToSection }: HeroProps) {
 
     fetchHeroImage();
   }, [location]);
-  //temp conditiion
+
   const handleButtonClickTemp = () => {
-    console.log(location); // Ensure this logs the expected value
+    console.log(location);
   
     if (location.includes("East Towne")) {
       window.open("https://www.vagaro.com/inspiresalon-easttowne/book-now", "_blank");
     } else if (location.includes("Park Street")) {
       window.open("https://www.vagaro.com/inspiresalon-parkst/book-now", "_blank");
     } else {
-      window.location.href = "/"; // Internal navigation to home
+      window.location.href = "/";
     }
   };
-  //temp conditiion
-
 
   const heroContent = location === 'Waunakee' ? {
     title: "Transform Your Look With Perfect Brows",
@@ -72,7 +69,7 @@ export function Hero({ location, scrollToSection }: HeroProps) {
   return (
     <section id="home" className="relative h-screen">
       <img 
-        src={backgroundImage}
+        src={heroImage}
         alt="Beautiful eye with long lashes"
         className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
       />
@@ -81,13 +78,7 @@ export function Hero({ location, scrollToSection }: HeroProps) {
           <div className="text-white max-w-2xl">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">{heroContent.title}</h1>
             <p className="text-xl mb-8 text-theme-accent">{heroContent.subtitle}</p>
-            {/* <button 
-              onClick={() => scrollToSection('services')}
-              className="bg-theme-primary text-white px-8 py-3 rounded-full hover:bg-theme-primary-hover transition-colors"
-            >
-              Book Now
-            </button> */}
-             <button
+            <button
               onClick={() => handleButtonClickTemp()}
               className="bg-theme-primary text-white px-6 py-2 rounded-full hover:bg-theme-primary-hover transition-colors"
             >

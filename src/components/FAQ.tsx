@@ -48,10 +48,10 @@ export function FAQ() {
           {faqData.map((faq, index) => (
             <div 
               key={index}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              className="bg-white rounded-lg shadow-md overflow-hidden border border-beige-200"
             >
               <button
-                className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                className="w-full px-6 py-4 flex items-center justify-between bg-beige-100 hover:bg-beige-200 transition-colors"
                 onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
               >
                 <h3 className="text-lg font-medium text-gray-900 text-left">{faq.question}</h3>

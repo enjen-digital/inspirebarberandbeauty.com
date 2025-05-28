@@ -66,11 +66,7 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
             <img 
               src="/images/inspire logo.png" 
               alt="Inspire Barber & Beauty Salon Logo" 
-              className={`h-16 w-auto object-contain cursor-pointer transition-all duration-300 ${
-                location === 'Sun Prairie' 
-                  ? 'hue-rotate-[330deg] brightness-75'
-                  : 'hue-rotate-[180deg]'
-              }`}
+              className="h-16 w-auto object-contain cursor-pointer transition-all duration-300"
               onClick={() => scrollToSection('home')}
             />
             <LocationToggle 

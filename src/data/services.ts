@@ -1,125 +1,125 @@
 export const services = [
   {
-    category: "Classic Lash Extensions",
+    category: "Haircuts",
     items: [
       {
-        title: 'Classic Full Set',
-        basePrice: 150,
-        description: 'Individual synthetic lashes applied to each natural lash for a natural, enhanced look.',
-        image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&q=80',
-        duration: '2-2.5 hours',
-        maintenance: '2-3 weeks'
-      },
-      {
-        title: 'Classic Fill (2-3 weeks)',
-        basePrice: 65,
-        description: 'Maintenance appointment for classic lash extensions. Must have at least 40% of previous set remaining.',
-        image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&q=80',
-        duration: '1-1.5 hours',
-        maintenance: '2-3 weeks'
-      }
-    ]
-  },
-  {
-    category: "Volume Lash Extensions",
-    items: [
-      {
-        title: 'Volume Full Set',
-        basePrice: 200,
-        description: 'Multiple lightweight extensions applied to each natural lash for a fuller, more dramatic look.',
-        image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&q=80',
-        duration: '2.5-3 hours',
-        maintenance: '2-3 weeks'
-      },
-      {
-        title: 'Volume Fill (2-3 weeks)',
-        basePrice: 85,
-        description: 'Maintenance appointment for volume lash extensions. Must have at least 40% of previous set remaining.',
-        image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&q=80',
-        duration: '1.5-2 hours',
-        maintenance: '2-3 weeks'
-      }
-    ]
-  },
-  {
-    category: "Permanent Makeup",
-    items: [
-      {
-        title: 'Microblading/Microshading',
-        basePrice: 500,
-        description: 'Semi-permanent eyebrow enhancement using fine hair-like strokes or shading technique.',
-        image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&q=80',
-        duration: '2-3 hours',
-        maintenance: '4-6 weeks touch-up required'
-      },
-      {
-        title: 'Microblading/Microshading 6 Week Follow Up',
-        basePrice: 150,
-        description: 'Required follow-up appointment for microblading/microshading clients. Previous appointment required.',
-        image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&q=80',
-        duration: '1-2 hours',
-        maintenance: 'As needed'
-      },
-      {
-        title: 'Eyebrow Touch Up - Microblading/Microshading',
-        basePrice: 150,
-        description: 'This is a brow appointment for clients who have had Microblading/Microshading in the past and are looking to get a refresher.',
-        image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&q=80',
-        duration: '1-2 hours',
-        maintenance: 'As needed'
-      },
-      {
-        title: 'Eyeliner - Both Top and Bottom',
-        basePrice: 500,
-        description: 'Permanent Eyeliner for both top and bottom.',
-        image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&q=80',
-        duration: '2-3 hours',
-        maintenance: '4 weeks follow-up required'
-      },
-      {
-        title: 'Eyeliner - Top OR Bottom',
-        basePrice: 350,
-        description: 'Permanent Eyeliner - Your choice of either top or bottom.',
-        image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&q=80',
-        duration: '1-2 hours',
-        maintenance: '4 weeks follow-up required'
-      },
-      {
-        title: 'Eyeliner 4 Week Follow Up',
-        basePrice: 150,
-        description: 'This is the 4 week follow up appointment for eyeliner clients. Previous appointment is required.',
-        image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&q=80',
-        duration: '1-2 hours',
-        maintenance: 'As needed'
-      },
-      {
-        title: 'Eyeliner Touch Up',
-        basePrice: 150,
-        description: 'This service is for clients who have had eyeliner done in the past, and are now looking for a refresher. This can be for both top and bottom, or just one.',
-        image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&q=80',
-        duration: '1-2 hours',
-        maintenance: 'As needed'
-      }
-    ]
-  },
-  {
-    category: "Additional Services",
-    items: [
-      {
-        title: 'Lash Removal',
+        title: 'Men\'s Haircut',
         basePrice: 35,
-        description: 'A safe, professional removal of lash extensions to ensure the health of your natural lashes.',
-        image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&q=80',
-        duration: '30-45 minutes',
+        description: 'Professional men\'s haircut includes consultation, shampoo, cut, and style.',
+        image: 'https://images.pexels.com/photos/1805600/pexels-photo-1805600.jpeg',
+        duration: '30-45 min',
+        maintenance: '3-4 weeks'
+      },
+      {
+        title: 'Women\'s Haircut',
+        basePrice: 45,
+        description: 'Women\'s haircut includes consultation, shampoo, precision cut, and style.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '45-60 min',
+        maintenance: '6-8 weeks'
+      },
+      {
+        title: 'Kids Haircut (12 & Under)',
+        basePrice: 25,
+        description: 'Children\'s haircut includes consultation and style. For children 12 and under.',
+        image: 'https://images.pexels.com/photos/1205033/pexels-photo-1205033.jpeg',
+        duration: '30 min',
+        maintenance: '4-6 weeks'
+      }
+    ]
+  },
+  {
+    category: "Color Services",
+    items: [
+      {
+        title: 'All Over Color',
+        basePrice: 85,
+        description: 'Single process color application. Price may vary based on hair length and density.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '1.5-2 hours',
+        maintenance: '4-6 weeks'
+      },
+      {
+        title: 'Partial Highlights',
+        basePrice: 95,
+        description: 'Partial foil highlights to frame the face and add dimension.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '1.5-2 hours',
+        maintenance: '6-8 weeks'
+      },
+      {
+        title: 'Full Highlights',
+        basePrice: 125,
+        description: 'Full head of foil highlights for maximum dimension and color impact.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '2-2.5 hours',
+        maintenance: '6-8 weeks'
+      },
+      {
+        title: 'Balayage',
+        basePrice: 150,
+        description: 'Hand-painted highlights for a natural, sun-kissed look.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '2-3 hours',
+        maintenance: '8-12 weeks'
+      }
+    ]
+  },
+  {
+    category: "Treatments",
+    items: [
+      {
+        title: 'Deep Conditioning Treatment',
+        basePrice: 25,
+        description: 'Intensive conditioning treatment to restore moisture and shine.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '30 min',
         maintenance: 'As needed'
       },
       {
-        title: 'Custom Spray Tan',
-        basePrice: 50,
-        description: 'Custom spray tan with Jenny, using the infamous Norvell Skin Solutions formula! This is located at Sunlife Tanning Studio, which is right next door to j. Lash Studios.',
-        image: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&q=80',
-        duration: '30 minutes',
-        maintenance: '7-10 days'
+        title: 'Keratin Treatment',
+        basePrice: 250,
+        description: 'Smoothing treatment to reduce frizz and improve manageability.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '2-3 hours',
+        maintenance: '3-5 months'
+      },
+      {
+        title: 'Scalp Treatment',
+        basePrice: 35,
+        description: 'Therapeutic scalp treatment to address dryness and promote healthy hair growth.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '45 min',
+        maintenance: 'Monthly'
+      }
+    ]
+  },
+  {
+    category: "Styling",
+    items: [
+      {
+        title: 'Blowout',
+        basePrice: 45,
+        description: 'Professional blow dry and style.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '45 min',
+        maintenance: '3-5 days'
+      },
+      {
+        title: 'Special Occasion Style',
+        basePrice: 75,
+        description: 'Formal styling for special events, weddings, or occasions.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '1 hour',
+        maintenance: 'One-time'
+      },
+      {
+        title: 'Braiding',
+        basePrice: 65,
+        description: 'Professional braiding services. Price varies by style complexity.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '1-2 hours',
+        maintenance: '1-2 weeks'
       }
     ]
   }

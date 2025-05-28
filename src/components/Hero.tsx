@@ -21,30 +21,7 @@ export function Hero({ location, scrollToSection }: HeroProps) {
   const [heroImage, setHeroImage] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    const fetchHeroImage = async () => {
-      try {
-        const response = await axios.get<HeroApiResponse>(`${API_BASE_URL}/api/hero-sections`);
-        
-        if (response.data.status && response.data.data.length > 0) {
-          const matchedImage = response.data.data.find(
-            (item) => item.salon.name === location
-          );
-          if (matchedImage) {
-            setHeroImage(matchedImage.file); 
-          } else {
-            setHeroImage(response.data.data[0].file);
-          }
-        }
-      } catch (error) {
-        console.error('Error fetching hero image:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchHeroImage();
-  }, [location]);
+  const backgroundImage = location === 'East Towne' ? '/images/east towne.jpg' : '/images/the hub.jpg';
 
   const handleButtonClickTemp = () => {
     console.log(location);
@@ -69,15 +46,15 @@ export function Hero({ location, scrollToSection }: HeroProps) {
   return (
     <section id="home" className="relative h-screen">
       <img 
-        src={heroImage}
-        alt="Beautiful eye with long lashes"
+        src={backgroundImage}
+        alt={`${location} location`}
         className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
       />
       <div className="absolute inset-0 bg-black/60">
         <div className="container mx-auto px-4 h-full flex items-center">
           <div className="text-white max-w-2xl">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">{heroContent.title}</h1>
-            <p className="text-xl mb-8 text-theme-accent">{heroContent.subtitle}</p>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Professional Hair Care & Styling</h1>
+            <p className="text-xl mb-8 text-theme-accent">Experience exceptional service at our {location} location</p>
             <button
               onClick={() => handleButtonClickTemp()}
               className="bg-theme-primary text-white px-6 py-2 rounded-full hover:bg-theme-primary-hover transition-colors"

@@ -53,8 +53,8 @@ export function Photos() {
               }`}
             />
             
-            {/* Next Image Preview */}
-            <div className="absolute top-1/2 -right-16 transform -translate-y-1/2 w-32 h-32 overflow-hidden rounded-lg shadow-md opacity-50 hover:opacity-100 transition-opacity">
+            {/* Next Image Preview - Left Side */}
+            <div className="absolute top-1/2 -left-16 transform -translate-y-1/2 w-32 h-32 overflow-hidden rounded-lg shadow-md opacity-50 hover:opacity-100 transition-opacity">
               <img
                 src={photos[(currentIndex + 1) % photos.length]}
                 alt="Next image preview"

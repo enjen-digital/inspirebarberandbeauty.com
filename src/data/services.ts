@@ -1,30 +1,59 @@
 export const services = [
   {
-    category: "Haircuts",
+    category: "Men's Services",
     items: [
       {
         title: 'Men\'s Haircut',
         basePrice: 35,
-        description: 'Professional men\'s haircut includes consultation, shampoo, cut, and style.',
+        description: 'Includes consultation, shampoo, cut and style.',
         image: 'https://images.pexels.com/photos/1805600/pexels-photo-1805600.jpeg',
-        duration: '30-45 min',
-        maintenance: '3-4 weeks'
+        duration: '30 min',
+        maintenance: '2-4 weeks'
       },
+      {
+        title: 'Men\'s Cut & Color',
+        basePrice: 75,
+        description: 'Haircut with color service to cover gray or create a new look.',
+        image: 'https://images.pexels.com/photos/1319461/pexels-photo-1319461.jpeg',
+        duration: '1 hour',
+        maintenance: '4-6 weeks'
+      },
+      {
+        title: 'Beard Trim',
+        basePrice: 15,
+        description: 'Professional beard trimming and shaping.',
+        image: 'https://images.pexels.com/photos/1319461/pexels-photo-1319461.jpeg',
+        duration: '15 min',
+        maintenance: '1-2 weeks'
+      }
+    ]
+  },
+  {
+    category: "Women's Services",
+    items: [
       {
         title: 'Women\'s Haircut',
         basePrice: 45,
-        description: 'Women\'s haircut includes consultation, shampoo, precision cut, and style.',
+        description: 'Includes consultation, shampoo, cut and style.',
         image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
-        duration: '45-60 min',
+        duration: '45 min',
         maintenance: '6-8 weeks'
       },
       {
-        title: 'Kids Haircut (12 & Under)',
-        basePrice: 25,
-        description: 'Children\'s haircut includes consultation and style. For children 12 and under.',
-        image: 'https://images.pexels.com/photos/1205033/pexels-photo-1205033.jpeg',
-        duration: '30 min',
-        maintenance: '4-6 weeks'
+        title: 'Women\'s Cut & Style',
+        basePrice: 55,
+        description: 'Haircut with professional styling.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '1 hour',
+        maintenance: '6-8 weeks'
+      },
+      {
+        title: 'Blow Dry & Style',
+        basePrice: 35,
+        description: 'Professional blow dry and styling service.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '45 min',
+        maintenance: '1 week'
       }
     ]
   },
@@ -34,25 +63,25 @@ export const services = [
       {
         title: 'All Over Color',
         basePrice: 85,
-        description: 'Single process color application. Price may vary based on hair length and density.',
+        description: 'Full head color application.',
         image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
-        duration: '1.5-2 hours',
+        duration: '2 hours',
         maintenance: '4-6 weeks'
       },
       {
         title: 'Partial Highlights',
-        basePrice: 95,
-        description: 'Partial foil highlights to frame the face and add dimension.',
+        basePrice: 75,
+        description: 'Highlights focused on top and crown area.',
         image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
-        duration: '1.5-2 hours',
+        duration: '1.5 hours',
         maintenance: '6-8 weeks'
       },
       {
         title: 'Full Highlights',
-        basePrice: 125,
-        description: 'Full head of foil highlights for maximum dimension and color impact.',
+        basePrice: 115,
+        description: 'Full head of highlights for maximum dimension.',
         image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
-        duration: '2-2.5 hours',
+        duration: '2.5 hours',
         maintenance: '6-8 weeks'
       },
       {
@@ -60,66 +89,66 @@ export const services = [
         basePrice: 150,
         description: 'Hand-painted highlights for a natural, sun-kissed look.',
         image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
-        duration: '2-3 hours',
+        duration: '3 hours',
         maintenance: '8-12 weeks'
       }
     ]
   },
   {
-    category: "Treatments",
+    category: "Chemical Services",
     items: [
       {
-        title: 'Deep Conditioning Treatment',
+        title: 'Permanent Wave',
+        basePrice: 85,
+        description: 'Creates lasting waves or curls.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '2 hours',
+        maintenance: '3-4 months'
+      },
+      {
+        title: 'Relaxer',
+        basePrice: 75,
+        description: 'Chemical straightening treatment.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '1.5 hours',
+        maintenance: '6-8 weeks'
+      },
+      {
+        title: 'Brazilian Blowout',
+        basePrice: 250,
+        description: 'Professional smoothing treatment.',
+        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
+        duration: '2.5 hours',
+        maintenance: '3-4 months'
+      }
+    ]
+  },
+  {
+    category: "Additional Services",
+    items: [
+      {
+        title: 'Deep Conditioning',
         basePrice: 25,
-        description: 'Intensive conditioning treatment to restore moisture and shine.',
+        description: 'Intensive moisture treatment for damaged hair.',
         image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
         duration: '30 min',
         maintenance: 'As needed'
       },
       {
-        title: 'Keratin Treatment',
-        basePrice: 250,
-        description: 'Smoothing treatment to reduce frizz and improve manageability.',
-        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
-        duration: '2-3 hours',
-        maintenance: '3-5 months'
-      },
-      {
         title: 'Scalp Treatment',
         basePrice: 35,
-        description: 'Therapeutic scalp treatment to address dryness and promote healthy hair growth.',
+        description: 'Treatment for dry or itchy scalp.',
         image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
-        duration: '45 min',
+        duration: '30 min',
         maintenance: 'Monthly'
-      }
-    ]
-  },
-  {
-    category: "Styling",
-    items: [
-      {
-        title: 'Blowout',
-        basePrice: 45,
-        description: 'Professional blow dry and style.',
-        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
-        duration: '45 min',
-        maintenance: '3-5 days'
       },
       {
         title: 'Special Occasion Style',
-        basePrice: 75,
-        description: 'Formal styling for special events, weddings, or occasions.',
+        basePrice: 65,
+        description: 'Formal styling for special events.',
         image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
         duration: '1 hour',
         maintenance: 'One-time'
-      },
-      {
-        title: 'Braiding',
-        basePrice: 65,
-        description: 'Professional braiding services. Price varies by style complexity.',
-        image: 'https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg',
-        duration: '1-2 hours',
-        maintenance: '1-2 weeks'
       }
     ]
   }

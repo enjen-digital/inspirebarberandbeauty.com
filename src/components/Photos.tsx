@@ -16,36 +16,65 @@ const photos = [
 
 export function Photos() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>();
-  const isPaused = useRef(false);
-  const scrollSpeed = 0.5; // Pixels per frame - lower number = slower scroll
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
-    // Double the content for seamless loop
-    scrollContainer.innerHTML = scrollContainer.innerHTML + scrollContainer.innerHTML;
 
-    const scroll = () => {
-      if (!scrollContainer) return;
-
-      if (!isPaused.current) {
-        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-          scrollContainer.scrollLeft = 0;
-        } else {
-          scrollContainer.scrollLeft += scrollSpeed;
-        }
-      }
-
-      animationRef.current = requestAnimationFrame(scroll);
+    const handleMouseDown = (e: MouseEvent) => {
+      isDragging.current = true;
+      startX.current = e.pageX - scrollContainer.offsetLeft;
+      scrollLeft.current = scrollContainer.scrollLeft;
     };
 
-    animationRef.current = requestAnimationFrame(scroll);
+    const handleTouchStart = (e: TouchEvent) => {
+      isDragging.current = true;
+      startX.current = e.touches[0].pageX - scrollContainer.offsetLeft;
+      scrollLeft.current = scrollContainer.scrollLeft;
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDragging.current) return;
+      e.preventDefault();
+      const x = e.pageX - scrollContainer.offsetLeft;
+      const walk = (x - startX.current) * 2;
+      scrollContainer.scrollLeft = scrollLeft.current - walk;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isDragging.current) return;
+      const x = e.touches[0].pageX - scrollContainer.offsetLeft;
+      const walk = (x - startX.current) * 2;
+      scrollContainer.scrollLeft = scrollLeft.current - walk;
+    };
+
+    const handleMouseUp = () => {
+      isDragging.current = false;
+    };
+
+    const handleTouchEnd = () => {
+      isDragging.current = false;
+    };
+
+    scrollContainer.addEventListener('mousedown', handleMouseDown);
+    scrollContainer.addEventListener('touchstart', handleTouchStart);
+    scrollContainer.addEventListener('mousemove', handleMouseMove);
+    scrollContainer.addEventListener('touchmove', handleTouchMove);
+    scrollContainer.addEventListener('mouseup', handleMouseUp);
+    scrollContainer.addEventListener('touchend', handleTouchEnd);
+    scrollContainer.addEventListener('mouseleave', handleMouseUp);
 
     return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
+      scrollContainer.removeEventListener('mousedown', handleMouseDown);
+      scrollContainer.removeEventListener('touchstart', handleTouchStart);
+      scrollContainer.removeEventListener('mousemove', handleMouseMove);
+      scrollContainer.removeEventListener('touchmove', handleTouchMove);
+      scrollContainer.removeEventListener('mouseup', handleMouseUp);
+      scrollContainer.removeEventListener('touchend', handleTouchEnd);
+      scrollContainer.removeEventListener('mouseleave', handleMouseUp);
     };
   }, []);
 
@@ -59,13 +88,12 @@ export function Photos() {
           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10" />
           <div 
             ref={scrollRef}
-            className="flex gap-6 overflow-x-hidden"
+            className="flex gap-6 overflow-x-auto touch-pan-x"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {photos.map((photo, index) => (
               <div 
                 key={index}
-                onMouseEnter={() => isPaused.current = true}
-                onMouseLeave={() => isPaused.current = false}
                 className="flex-none w-80 h-96 relative rounded-xl overflow-hidden shadow-lg transform transition-transform hover:scale-105"
               >
                 <img

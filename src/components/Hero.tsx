@@ -23,13 +23,18 @@ interface HeroProps {
 }
 
 export function Hero({ location, scrollToSection }: HeroProps) {
-  const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('right');
+  const [isAnimating, setIsAnimating] = useState(false);
   const [prevLocation, setPrevLocation] = useState(location);
 
   const backgroundImage = location === 'East Towne' ? '/images/east towne.jpg' : '/images/the hub.jpg';
 
   useEffect(() => {
-    setSlideDirection(location === 'East Towne' ? 'right' : 'left');
+    if (prevLocation !== location) {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setIsAnimating(false);
+      }, 500);
+    }
     setPrevLocation(location);
   }, [location]);
 
@@ -45,9 +50,7 @@ export function Hero({ location, scrollToSection }: HeroProps) {
     }
   };
 
-  const slideClass = `transform transition-transform duration-500 ${
-    slideDirection === 'right' ? 'translate-x-0' : '-translate-x-0'
-  }`;
+  const animationClass = isAnimating ? 'fade-exit' : 'fade-enter';
 
   return (
     <section id="home" className="relative h-screen">
@@ -59,7 +62,7 @@ export function Hero({ location, scrollToSection }: HeroProps) {
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 h-full flex items-center justify-end">
           <div className="text-white max-w-2xl text-right overflow-hidden">
-            <div className={slideClass}>
+            <div className={animationClass}>
               <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
                 {locationContent[location].title}
               </h1>
@@ -78,19 +81,3 @@ export function Hero({ location, scrollToSection }: HeroProps) {
       </div>
     </section>
   );
-}
-
-const styles = {
-  slideIn: {
-    opacity: 1,
-    transform: 'translateX(0)',
-  },
-  slideOutLeft: {
-    opacity: 0,
-    transform: 'translateX(-100%)',
-  },
-  slideOutRight: {
-    opacity: 0,
-    transform: 'translateX(100%)',
-  },
-};

@@ -4,6 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
+        beige: {
+          50: '#fdfbf6',
+          100: '#fcf7ed',
+          200: '#f7ecd3',
+          300: '#f2e0b9',
+          400: '#e9c98a',
+          500: '#e0b15b',
+          600: '#ca8f2d',
+          700: '#a87324',
+          800: '#8a5e23',
+          900: '#714d21',
+        },
         burgundy: {
           50: '#fdf2f4',
           100: '#fce7ea',

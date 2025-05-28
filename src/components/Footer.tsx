@@ -16,13 +16,13 @@ export function Footer({ location }: FooterProps) {
           <div>
             <div className="mb-4">
               <img
-                src="/images/jlash logo no background.png"
-                alt="J. Lash Studios Logo"
+                src="/images/inspire logo.png"
+                alt="Inspire Barber & Beauty Salon Logo"
                 className="h-12 w-auto object-contain brightness-0 invert"
               />
             </div>
             <p className="text-theme-accent">
-              Enhancing your natural beauty with premium lash services.
+              Providing exceptional hair care and beauty services.
             </p>
           </div>
           <div>

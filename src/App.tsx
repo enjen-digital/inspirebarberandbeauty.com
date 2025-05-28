@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Stats } from "./components/Stats";
-import { Squad } from "./components/Squad";
+import { Stylists } from "./components/Squad";
 import { Services } from "./components/Services";
 import { Gallery } from "./components/Gallery";
 import { FAQ } from "./components/FAQ";
@@ -125,7 +125,7 @@ function App() {
                 <div ref={statsRef}>
                   <Stats stats={stats} location={location} />
                 </div>
-                <Squad />
+                <Stylists />
                 <Services
                   services={services}
                   expandedCategory={expandedCategory}

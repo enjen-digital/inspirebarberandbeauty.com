@@ -1,13 +1,13 @@
 import React from 'react';
 
-interface SquadMember {
+interface Stylist {
   name: string;
   role: string;
   image: string;
   description: string;
 }
 
-const squadMembers: SquadMember[] = [
+const stylists: Stylist[] = [
   {
     name: "Brian",
     role: "Owner & Barber",
@@ -22,31 +22,31 @@ const squadMembers: SquadMember[] = [
   }
 ];
 
-export function Squad() {
+export function Stylists() {
   return (
-    <section id="squad" className="py-20 bg-white">
+    <section id="stylists" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4">Meet the Squad</h2>
+        <h2 className="text-4xl font-bold text-center mb-4">Our Stylists</h2>
         <p className="text-theme-text text-center mb-12 max-w-2xl mx-auto">
           Our talented team of professionals is dedicated to helping you look and feel your best.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {squadMembers.map((member, index) => (
+          {stylists.map((stylist, index) => (
             <div key={index} className="group">
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
                 <img
-                  src={member.image}
-                  alt={member.name}
+                  src={stylist.image}
+                  alt={stylist.name}
                   className="w-full h-[400px] object-cover object-center transform group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-2xl font-bold mb-1">{member.name}</h3>
-                  <p className="text-theme-accent font-medium">{member.role}</p>
+                  <h3 className="text-2xl font-bold mb-1">{stylist.name}</h3>
+                  <p className="text-theme-accent font-medium">{stylist.role}</p>
                 </div>
               </div>
               <div className="space-y-3">
-                <p className="text-gray-600">{member.description}</p>
+                <p className="text-gray-600">{stylist.description}</p>
               </div>
             </div>
           ))}

@@ -17,19 +17,17 @@ const photos = [
 export function Photos() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>();
-  const isPaused = useRef(false);
+  const [isPaused, setIsPaused] = useState(false);
   const scrollSpeed = 0.25; // Pixels per frame - lower number = slower scroll
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
-    // Double the content for seamless loop
-    scrollContainer.innerHTML = scrollContainer.innerHTML + scrollContainer.innerHTML;
 
     const scroll = () => {
       if (!scrollContainer) return;
 
-      if (!isPaused.current) {
+      if (!isPaused) {
         if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
           scrollContainer.scrollLeft = 0;
         } else {
@@ -64,8 +62,8 @@ export function Photos() {
             {photos.map((photo, index) => (
               <div 
                 key={index}
-                onMouseEnter={() => isPaused.current = true}
-                onMouseLeave={() => isPaused.current = false}
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
                 className="flex-none w-80 h-96 relative rounded-xl overflow-hidden shadow-lg transform transition-transform hover:scale-105"
               >
                 <img
@@ -73,6 +71,18 @@ export function Photos() {
                   alt={`Gallery image ${index + 1}`}
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+              </div>
+            ))}
+            {/* Duplicate photos for seamless loop */}
+            {photos.map((photo, index) => (
+              <div 
+                key={`duplicate-${index}`}
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                className="flex-none w-80 h-96 relative rounded-xl overflow-hidden shadow-lg transform transition-transform hover:scale-105"
+              >
+                <img src={photo} alt={`Gallery image ${index + 1}`} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
             ))}

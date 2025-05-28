@@ -48,13 +48,13 @@ export function Hero({ location, scrollToSection }: HeroProps) {
       <img 
         src={backgroundImage}
         alt={`${location} location`}
-        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 grayscale"
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 grayscale filter blur-[2px]"
       />
-      <div className="absolute inset-0 bg-black/60">
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 h-full flex items-center justify-end">
           <div className="text-white max-w-2xl text-right">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Professional Hair Care & Styling</h1>
-            <p className="text-xl mb-8 text-theme-accent">Experience exceptional service at our {location} location</p>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Professional Hair Care & Styling</h1>
+            <p className="text-xl mb-8 text-theme-accent drop-shadow-md">Experience exceptional service at our {location} location</p>
             <button
               onClick={() => handleButtonClickTemp()}
               className="bg-theme-primary text-white px-8 py-3 rounded-full hover:bg-theme-primary-hover transition-colors"

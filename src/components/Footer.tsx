@@ -18,7 +18,7 @@ export function Footer({ location }: FooterProps) {
               <img
                 src="/images/inspire logo.png"
                 alt="Inspire Barber & Beauty Salon Logo"
-                className="h-12 w-auto object-contain brightness-0 invert"
+                className="h-16 w-auto object-contain brightness-0 invert"
               />
             </div>
             <p className="text-theme-accent">

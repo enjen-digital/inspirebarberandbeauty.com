@@ -34,18 +34,6 @@ export function Services({
 }: ServicesProps) {
   const navigate = useNavigate();
 
-  const handleBookingClick = (
-    serviceTitle: string,
-    servicePrice: number,
-    serviceDuration: string
-  ) => {
-    const bookingUrl = location === "East Towne" 
-      ? "https://www.vagaro.com/inspiresalon-easttowne/book-now"
-      : "https://www.vagaro.com/inspiresalon-parkst/book-now";
-    
-    window.open(bookingUrl, "_blank");
-  };
-
   return (
     <section id="services" className="py-20 bg-gray-50">
       <h2 className="text-4xl font-bold text-center mb-16">Our Services</h2>
@@ -123,11 +111,6 @@ export function Services({
                             </div>
                           </div>
                           <button
-                            onClick={() => handleBookingClick(
-                              service.title,
-                              service.basePrice,
-                              service.duration
-                            )}
                             className="w-full bg-theme-primary text-white py-2 rounded-full hover:bg-theme-primary-hover transition-colors mt-4"
                           >
                             Book Now

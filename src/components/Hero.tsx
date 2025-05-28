@@ -38,18 +38,6 @@ export function Hero({ location, scrollToSection }: HeroProps) {
     setPrevLocation(location);
   }, [location]);
 
-  const handleButtonClickTemp = () => {
-    console.log(location);
-  
-    if (location.includes("East Towne")) {
-      window.open("https://www.vagaro.com/inspiresalon-easttowne/book-now", "_blank");
-    } else if (location.includes("Park Street")) {
-      window.open("https://www.vagaro.com/inspiresalon-parkst/book-now", "_blank");
-    } else {
-      window.location.href = "/";
-    }
-  };
-
   const animationClass = isAnimating ? 'fade-exit' : 'fade-enter';
 
   return (
@@ -70,7 +58,6 @@ export function Hero({ location, scrollToSection }: HeroProps) {
                 {locationContent[location].subtitle}
               </p>
               <button
-                onClick={() => handleButtonClickTemp()}
                 className="bg-theme-primary text-white px-8 py-3 rounded-full hover:bg-theme-primary-hover transition-colors"
               >
                 Book Now

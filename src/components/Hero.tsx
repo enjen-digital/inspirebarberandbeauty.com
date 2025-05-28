@@ -1,6 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import API_BASE_URL from '../utils/api_url';
 
+interface LocationContent {
+  title: string;
+  subtitle: string;
+}
+
+const locationContent: Record<'East Towne' | 'Park Street', LocationContent> = {
+  'East Towne': {
+    title: 'Experience Excellence in Hair Care',
+    subtitle: 'Madison\'s premier destination for professional cuts and styling at East Towne Mall',
+  },
+  'Park Street': {
+    title: 'Elevate Your Style',
+    subtitle: 'Visit our Park Street location for trendsetting cuts and expert grooming',
+  }
+};
+
 interface HeroProps {
   location: 'East Towne' | 'Park Street';
   scrollToSection: (id: string) => void;
@@ -45,10 +61,10 @@ export function Hero({ location, scrollToSection }: HeroProps) {
           <div className="text-white max-w-2xl text-right overflow-hidden">
             <div className={slideClass}>
               <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-                Professional Hair Care & Styling
+                {locationContent[location].title}
               </h1>
               <p className="text-xl mb-8 text-theme-accent drop-shadow-md">
-                Experience exceptional service at our {location} location
+                {locationContent[location].subtitle}
               </p>
               <button
                 onClick={() => handleButtonClickTemp()}

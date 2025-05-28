@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Stats } from "./components/Stats";
-import { Team } from "./components/Team";
 import { Services } from "./components/Services";
 import { Gallery } from "./components/Gallery";
 import { FAQ } from "./components/FAQ";
@@ -17,7 +16,6 @@ import ArtistAvailability from "./components/ArtistAvailability";
 
 // Data
 import { services } from "./data/services";
-import { teamMembers } from "./data/team";
 
 interface LocationTheme {
   primary: string;
@@ -126,7 +124,6 @@ function App() {
                 <div ref={statsRef}>
                   <Stats stats={stats} location={location} />
                 </div>
-                <Team members={teamMembers} location={location} />
                 <Services
                   services={services}
                   expandedCategory={expandedCategory}

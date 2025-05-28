@@ -17,9 +17,9 @@ const photos = [
 export function Photos() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>();
+  const isPaused = useRef(false);
   const scrollSpeed = 0.5; // Pixels per frame - lower number = slower scroll
 
-  const ANIMATION_DURATION = 800; // Increased from 500ms to 800ms
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
@@ -29,10 +29,12 @@ export function Photos() {
     const scroll = () => {
       if (!scrollContainer) return;
 
-      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-        scrollContainer.scrollLeft = 0;
-      } else {
-        scrollContainer.scrollLeft += scrollSpeed;
+      if (!isPaused.current) {
+        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+          scrollContainer.scrollLeft = 0;
+        } else {
+          scrollContainer.scrollLeft += scrollSpeed;
+        }
       }
 
       animationRef.current = requestAnimationFrame(scroll);
@@ -62,6 +64,8 @@ export function Photos() {
             {photos.map((photo, index) => (
               <div 
                 key={index}
+                onMouseEnter={() => isPaused.current = true}
+                onMouseLeave={() => isPaused.current = false}
                 className="flex-none w-80 h-96 relative rounded-xl overflow-hidden shadow-lg transform transition-transform hover:scale-105"
               >
                 <img

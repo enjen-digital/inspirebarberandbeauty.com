@@ -42,9 +42,9 @@ export function Photos() {
     <section id="photos" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12">Our Work</h2>
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-2xl mx-auto">
           {/* Main Image */}
-          <div className="relative aspect-[3/2] overflow-hidden rounded-lg shadow-xl">
+          <div className="relative aspect-[3/2] overflow-hidden rounded-lg shadow-xl h-[400px]">
             <img
               src={photos[currentIndex]}
               alt={`Gallery image ${currentIndex + 1}`}
@@ -56,17 +56,17 @@ export function Photos() {
             {/* Navigation Arrows */}
             <button
               onClick={goToPrevious}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 rounded-full transition-colors"
               aria-label="Previous image"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={goToNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 rounded-full transition-colors"
               aria-label="Next image"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
 

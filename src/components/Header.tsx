@@ -15,7 +15,7 @@ const LocationToggle = ({ location, setLocation, className = '' }: {
   className?: string;
 }) => (
   <div className="flex flex-col items-center">
-    <div className={`flex items-center space-x-1 text-sm ${className}`}>
+    <div className={`flex items-center text-xs ${className}`}>
       <button
         onClick={() => setLocation('East Towne')}
         className={`px-2 py-1 rounded-l-full whitespace-nowrap transition-colors ${
@@ -37,7 +37,7 @@ const LocationToggle = ({ location, setLocation, className = '' }: {
         Park Street
       </button>
     </div>
-    <div className="text-theme-primary text-sm font-medium animate-[pulse-opacity_2s_ease-in-out_infinite] mt-1 hidden md:block">
+    <div className="text-theme-primary text-xs font-medium animate-[pulse-opacity_2s_ease-in-out_infinite] mt-1 hidden md:block">
       Booking for {location}
     </div>
   </div>
@@ -61,22 +61,24 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
   return (
     <header className="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          <div className="flex items-center space-x-8">
+        <div className="flex items-center h-20">
+          <div className="flex-1">
             <img 
               src="/images/inspire logo.png" 
               alt="Inspire Barber & Beauty Salon Logo" 
               className="h-20 w-auto object-contain cursor-pointer transition-all duration-300"
               onClick={() => scrollToSection('home')}
             />
+          </div>
+          <div className="flex items-center justify-center mx-4">
             <LocationToggle 
               location={location} 
               setLocation={setLocation} 
-              className="hidden md:flex" 
+              className="hidden md:flex scale-90" 
             />
           </div>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6 mr-4">
             <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-theme-primary transition-colors">Home</button>
             <button onClick={() => scrollToSection('team')} className="text-gray-700 hover:text-theme-primary transition-colors">Our Team</button>
             <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-theme-primary transition-colors">Services</button>

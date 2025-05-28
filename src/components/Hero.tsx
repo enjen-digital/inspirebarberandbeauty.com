@@ -51,11 +51,12 @@ export function Hero({ location, scrollToSection }: HeroProps) {
                 Experience exceptional service at our {location} location
               </p>
               <button
-              onClick={() => handleButtonClickTemp()}
-              className="bg-theme-primary text-white px-8 py-3 rounded-full hover:bg-theme-primary-hover transition-colors"
-            >
-              Book Now
-            </button>
+                onClick={() => handleButtonClickTemp()}
+                className="bg-theme-primary text-white px-8 py-3 rounded-full hover:bg-theme-primary-hover transition-colors"
+              >
+                Book Now
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -76,3 +77,4 @@ const styles = {
     opacity: 0,
     transform: 'translateX(100%)',
   },
+};

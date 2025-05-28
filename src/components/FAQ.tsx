@@ -8,32 +8,32 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "How long do lash extensions last?",
-    answer: "Lash extensions typically last through a full growth cycle of your natural lashes, usually about 6-8 weeks. However, we recommend getting fills every 2-3 weeks to maintain a full look as your natural lashes shed."
+    question: "How often should I get my hair cut to maintain a fresh fade?",
+    answer: "For the sharpest look, we recommend getting your fade touched up every 2-3 weeks. However, this can vary depending on your hair growth rate and the specific style you're maintaining. Some clients with slower hair growth can stretch it to 4 weeks."
   },
   {
-    question: "Is the lash extension application process painful?",
-    answer: "No, the lash extension application is painless. You'll lie down comfortably with your eyes closed while the extensions are applied. Many clients find the process so relaxing they fall asleep!"
+    question: "What's the process for starting dreadlocks, and how long does it take?",
+    answer: "Starting dreadlocks is a personalized process that begins with a consultation to discuss your hair texture and desired results. The initial installation takes 4-6 hours, depending on your hair length and desired thickness. We use professional techniques to ensure your locs form properly, and the full locking process typically takes 6-12 months, with regular maintenance every 4-6 weeks."
   },
   {
-    question: "How long does a full set application take?",
-    answer: "A full set of classic lashes typically takes 2-2.5 hours, while volume sets can take 2.5-3 hours. Fill appointments are shorter, usually 1-2 hours depending on the type of lashes."
+    question: "Do you work with all hair textures?",
+    answer: "Yes, our skilled barbers and stylists are experienced with all hair textures, from straight to coily (Types 1-4). We specialize in African American hair care and have extensive experience with various techniques for cutting, styling, and maintaining textured hair."
   },
   {
-    question: "How should I care for my lash extensions?",
-    answer: "Keep your lashes dry for the first 24 hours after application. Avoid oil-based products around your eyes, don't use mechanical eyelash curlers, and gently clean your lashes daily with a lash-safe cleanser. Brush them gently with a clean spoolie brush to maintain their shape."
+    question: "What products do you recommend for maintaining healthy natural hair?",
+    answer: "We recommend using sulfate-free shampoos, deep conditioning treatments, and natural oils like jojoba or argan oil. For specific recommendations, we can evaluate your hair type and current routine during your visit. We carry professional-grade products specifically formulated for textured hair."
   },
   {
-    question: "What is the difference between classic and volume lashes?",
-    answer: "Classic lashes involve applying one extension to each natural lash for a more natural look. Volume lashes use multiple lightweight extensions per natural lash, creating a fuller, more dramatic appearance."
+    question: "How should I prepare for my first appointment?",
+    answer: "Come with your hair in its natural state if possible - no heavy products or tight styles. This helps us better assess your hair texture and discuss your goals. If you're getting a cut or fade, clean hair is best. For chemical services, it's better not to wash your hair for a few days before."
   },
   {
-    question: "How long does microblading last?",
-    answer: "Microblading typically lasts 1-3 years, depending on your skin type and aftercare routine. A touch-up is recommended 4-6 weeks after the initial procedure, and annual touch-ups can help maintain the look."
+    question: "Do you offer chemical services like relaxers and texturizers?",
+    answer: "Yes, we offer professional chemical services including relaxers, texturizers, and permanent waves. Our stylists are certified and experienced in these treatments. We always perform a strand test and consultation first to ensure the best results for your hair type."
   },
   {
-    question: "What should I do before my appointment?",
-    answer: "Come to your appointment with clean lashes/brows, no eye makeup, and avoid caffeine before lash appointments (it can make your eyes flutter). For microblading, avoid blood thinners, alcohol, and retinol products for 48 hours before your appointment."
+    question: "What's your policy on children's haircuts?",
+    answer: "We welcome children and have special pricing for kids 12 and under. We recommend booking children's appointments earlier in the day when they're typically more patient. Our barbers are experienced in working with children and making their first haircut experiences positive."
   }
 ];
 

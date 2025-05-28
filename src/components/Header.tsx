@@ -4,37 +4,37 @@ import { Menu, X } from 'lucide-react';
 interface HeaderProps {
   isMenuOpen: boolean;
   setIsMenuOpen: (isOpen: boolean) => void;
-  location: 'East Towne' | 'Park Street';
-  setLocation: (location: 'East Towne' | 'Park Street') => void;
+  location: 'Sun Prairie' | 'Waunakee';
+  setLocation: (location: 'Sun Prairie' | 'Waunakee') => void;
   scrollToSection: (id: string) => void;
 }
 
 const LocationToggle = ({ location, setLocation, className = '' }: {
-  location: 'East Towne' | 'Park Street';
-  setLocation: (location: 'East Towne' | 'Park Street') => void;
+  location: 'Sun Prairie' | 'Waunakee';
+  setLocation: (location: 'Sun Prairie' | 'Waunakee') => void;
   className?: string;
 }) => (
   <div className="flex flex-col items-center">
     <div className={`flex items-center space-x-1 text-sm ${className}`}>
       <button
-        onClick={() => setLocation('East Towne')}
+        onClick={() => setLocation('Sun Prairie')}
         className={`px-2 py-1 rounded-l-full whitespace-nowrap transition-colors ${
-          location === 'East Towne'
+          location === 'Sun Prairie'
             ? 'bg-theme-primary text-white'
             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
         }`}
       >
-        East Towne
+        Sun Prairie
       </button>
       <button
-        onClick={() => setLocation('Park Street')}
+        onClick={() => setLocation('Waunakee')}
         className={`px-2 py-1 rounded-r-full transition-colors ${
-          location === 'Park Street'
+          location === 'Waunakee'
             ? 'bg-theme-primary text-white'
             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
         }`}
       >
-        Park Street
+        Waunakee
       </button>
     </div>
     <div className="text-theme-primary text-sm font-medium animate-[pulse-opacity_2s_ease-in-out_infinite] mt-1 hidden md:block">
@@ -48,9 +48,9 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
   const handleButtonClickTemp = () => {
     console.log(location); // Ensure this logs the expected value
 
-    if (location.includes("East Towne")) {
+    if (location.includes("Sun Prairie")) {
       window.open("https://www.vagaro.com/jlashstudios/book-now", "_blank");
-    } else if (location.includes("Park Street")) {
+    } else if (location.includes("Waunakee")) {
       window.open("https://www.vagaro.com/jlashstudios-waunakee/book-now", "_blank");
     } else {
       window.location.href = "/"; // Internal navigation to home
@@ -62,12 +62,12 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
     <header className="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center space-x-12">
+          <div className="flex items-center space-x-8">
             <img 
-              src="/images/inspire logo.png" 
-              alt="Inspire Barber & Beauty Salon Logo" 
-              className={`h-20 w-auto object-contain cursor-pointer transition-all duration-300 ${
-                location === 'East Towne' 
+              src="/images/jlash logo no background.png" 
+              alt="J. Lash Studios Logo" 
+              className={`h-16 w-auto object-contain cursor-pointer transition-all duration-300 ${
+                location === 'Sun Prairie' 
                   ? 'hue-rotate-[330deg] brightness-75'
                   : 'hue-rotate-[180deg]'
               }`}

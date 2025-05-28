@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 import API_BASE_URL from '../utils/api_url';
 
 interface FooterProps {
-  location: "East Towne" | "Park Street";
+  location: "Sun Prairie" | "Waunakee";
 }
 
 export function Footer({ location }: FooterProps) {
@@ -16,13 +16,13 @@ export function Footer({ location }: FooterProps) {
           <div>
             <div className="mb-4">
               <img
-                src="/images/inspire logo.png"
-                alt="Inspire Barber & Beauty Salon Logo"
+                src="/images/jlash logo no background.png"
+                alt="J. Lash Studios Logo"
                 className="h-12 w-auto object-contain brightness-0 invert"
               />
             </div>
             <p className="text-theme-accent">
-              Your destination for professional hair care and beauty services.
+              Enhancing your natural beauty with premium lash services.
             </p>
           </div>
           <div>
@@ -51,36 +51,36 @@ export function Footer({ location }: FooterProps) {
             <div className="space-y-4">
               <div>
                 <h5 className="font-semibold text-theme-accent mb-1">
-                  East Towne
+                  Sun Prairie
                 </h5>
                 <a
-                  href="https://maps.google.com/?q=89+W+Towne+Mall,+Madison,+WI+53719"
+                  href="https://maps.google.com/?q=242+E+Main+St,+Suite+4,+Sun+Prairie,+WI+53590"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start text-theme-accent hover:text-white transition-colors"
                 >
                   <MapPin className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
                   <span>
-                    89 W Towne Mall<br />
-                    Madison, WI 53719
+                    242 E Main St, Suite 4<br />
+                    Sun Prairie, WI 53590
                   </span>
                 </a>
               </div>
               <div>
                 <h5 className="font-semibold text-theme-accent mb-1">
-                  Park Street
+                  Waunakee
                 </h5>
                 <a
-                  href="https://maps.google.com/?q=1313+S+Park+St,+Madison,+WI+53715"
+                  href="https://maps.google.com/?q=204+S+Century+Ave,+A3,+Waunakee,+WI+53597"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start text-theme-accent hover:text-white transition-colors"
                 >
                   <MapPin className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
                   <span>
-                    1313 S Park St
+                    204 S Century Ave, A3
                     <br />
-                    Madison, WI 53715
+                    Waunakee, WI 53597
                   </span>
                 </a>
               </div>

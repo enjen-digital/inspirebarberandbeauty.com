@@ -5,7 +5,7 @@
 :root {
   --primary-color: theme('colors.burgundy.700');
   --primary-hover: theme('colors.burgundy.800');
-  --secondary-color: theme('colors.beige.200');
+  --secondary-color: theme('colors.beige.100');
   --accent-color: theme('colors.navy.700');
   --text-color: theme('colors.burgundy.700');
 }

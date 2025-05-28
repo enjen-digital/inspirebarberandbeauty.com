@@ -14,8 +14,8 @@ const LocationToggle = ({ location, setLocation, className = '' }: {
   setLocation: (location: 'East Towne' | 'Park Street') => void;
   className?: string;
 }) => (
-  <div className="flex flex-col items-center">
-    <div className={`flex items-center space-x-1 text-sm ${className}`}>
+  <div className="flex flex-col items-center scale-90">
+    <div className={`flex items-center space-x-1 text-xs ${className}`}>
       <button
         onClick={() => setLocation('East Towne')}
         className={`px-2 py-1 rounded-l-full whitespace-nowrap transition-colors ${
@@ -37,7 +37,7 @@ const LocationToggle = ({ location, setLocation, className = '' }: {
         Park Street
       </button>
     </div>
-    <div className="text-theme-primary text-sm font-medium animate-[pulse-opacity_2s_ease-in-out_infinite] mt-1 hidden md:block">
+    <div className="text-theme-primary text-xs font-medium animate-[pulse-opacity_2s_ease-in-out_infinite] mt-1 hidden md:block">
       Booking for {location}
     </div>
   </div>
@@ -97,8 +97,7 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
           <div className="md:hidden flex items-center space-x-2">
             <LocationToggle 
               location={location} 
-              setLocation={setLocation}
-              className="scale-90" 
+              setLocation={setLocation} 
             />
             <button 
               className="p-2"

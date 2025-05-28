@@ -3,7 +3,7 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      colors: { 
+      colors: {
         burgundy: {
           50: '#fdf2f4',
           100: '#fce7ea',
@@ -15,9 +15,9 @@ export default {
           700: '#8B1D2C',
           800: '#731A26',
           900: '#5F1720',
-        }
+        },
       },
     },
   },
   plugins: [],
-};
+}

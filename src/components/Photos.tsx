@@ -19,24 +19,27 @@ export function Photos() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
+  const ANIMATION_DURATION = 800; // Increased from 500ms to 800ms
+  const AUTO_ADVANCE_DELAY = 8000; // Increased from 5000ms to 8000ms
+
   const goToNext = () => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
-    setTimeout(() => setIsAnimating(false), 500);
+    setTimeout(() => setIsAnimating(false), ANIMATION_DURATION);
   };
 
   const goToPrevious = () => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrentIndex((prevIndex) => (prevIndex - 1 + photos.length) % photos.length);
-    setTimeout(() => setIsAnimating(false), 500);
+    setTimeout(() => setIsAnimating(false), ANIMATION_DURATION);
   };
 
   useEffect(() => {
-    const timer = setInterval(goToNext, 5000); // Auto advance every 5 seconds
+    const timer = setInterval(goToNext, AUTO_ADVANCE_DELAY);
     return () => clearInterval(timer);
-  }, []);
+  }, [currentIndex]);
 
   return (
     <section id="photos" className="py-20 bg-gray-50">
@@ -49,7 +52,7 @@ export function Photos() {
             <img
               src={photos[currentIndex]}
               alt={`Gallery image ${currentIndex + 1}`}
-              className={`w-full h-full object-contain transition-opacity duration-500 ${
+              className={`w-full h-full object-contain transition-opacity duration-800 ${
                 isAnimating ? 'opacity-80' : 'opacity-100'
               } p-2`}
             />
@@ -89,7 +92,7 @@ export function Photos() {
                   if (isAnimating) return;
                   setIsAnimating(true);
                   setCurrentIndex(index);
-                  setTimeout(() => setIsAnimating(false), 500);
+                  setTimeout(() => setIsAnimating(false), ANIMATION_DURATION);
                 }}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   currentIndex === index

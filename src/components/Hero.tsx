@@ -48,7 +48,7 @@ export function Hero({ location, scrollToSection }: HeroProps) {
       <img 
         src={backgroundImage}
         alt={`${location} location`}
-        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 grayscale"
       />
       <div className="absolute inset-0 bg-black/60">
         <div className="container mx-auto px-4 h-full flex items-center">

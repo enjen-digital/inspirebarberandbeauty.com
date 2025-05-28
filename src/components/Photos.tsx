@@ -44,11 +44,11 @@ export function Photos() {
         <h2 className="text-4xl font-bold text-center mb-12">Our Work</h2>
         <div className="relative max-w-2xl mx-auto">
           {/* Main Image */}
-          <div className="relative aspect-[3/2] overflow-hidden rounded-lg shadow-xl h-[400px]">
+          <div className="relative overflow-hidden rounded-lg shadow-xl h-[400px]">
             <img
               src={photos[currentIndex]}
               alt={`Gallery image ${currentIndex + 1}`}
-              className={`w-full h-full object-cover transition-opacity duration-500 ${
+              className={`w-full h-full object-contain transition-opacity duration-500 ${
                 isAnimating ? 'opacity-80' : 'opacity-100'
               }`}
             />

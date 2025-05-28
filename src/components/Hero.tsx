@@ -8,7 +8,7 @@ interface LocationContent {
 
 const locationContent: Record<'East Towne' | 'Park Street', LocationContent> = {
   'East Towne': {
-    title: 'Experience Excellence in Hair Care',
+    title: 'Come Catch This Fade',
     subtitle: 'Madison\'s premier destination for professional cuts and styling at East Towne Mall',
   },
   'Park Street': {

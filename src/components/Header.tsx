@@ -64,8 +64,8 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-8">
             <img 
-              src="/images/jlash logo no background.png" 
-              alt="J. Lash Studios Logo" 
+              src="/images/inspire logo.png" 
+              alt="Inspire Barber & Beauty Salon Logo" 
               className={`h-16 w-auto object-contain cursor-pointer transition-all duration-300 ${
                 location === 'Sun Prairie' 
                   ? 'hue-rotate-[330deg] brightness-75'

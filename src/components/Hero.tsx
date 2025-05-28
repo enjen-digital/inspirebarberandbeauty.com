@@ -81,3 +81,4 @@ export function Hero({ location, scrollToSection }: HeroProps) {
       </div>
     </section>
   );
+}

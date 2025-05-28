@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
 
 const photos = [
   '/images/gallery1.jpg',
@@ -16,91 +15,62 @@ const photos = [
 ];
 
 export function Photos() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<number>();
+  const scrollSpeed = 0.5; // Pixels per frame - lower number = slower scroll
 
   const ANIMATION_DURATION = 800; // Increased from 500ms to 800ms
-  const AUTO_ADVANCE_DELAY = 8000; // Increased from 5000ms to 8000ms
-
-  const goToNext = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
-    setTimeout(() => setIsAnimating(false), ANIMATION_DURATION);
-  };
-
-  const goToPrevious = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + photos.length) % photos.length);
-    setTimeout(() => setIsAnimating(false), ANIMATION_DURATION);
-  };
-
   useEffect(() => {
-    const timer = setInterval(goToNext, AUTO_ADVANCE_DELAY);
-    return () => clearInterval(timer);
-  }, [currentIndex]);
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+    // Double the content for seamless loop
+    scrollContainer.innerHTML = scrollContainer.innerHTML + scrollContainer.innerHTML;
+
+    const scroll = () => {
+      if (!scrollContainer) return;
+
+      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+        scrollContainer.scrollLeft = 0;
+      } else {
+        scrollContainer.scrollLeft += scrollSpeed;
+      }
+
+      animationRef.current = requestAnimationFrame(scroll);
+    };
+
+    animationRef.current = requestAnimationFrame(scroll);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section id="photos" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-4">Our Work</h2>
         <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Experience our dedication to excellence through our portfolio of transformative styles</p>
-        <div className="relative max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.1)] border border-gray-100">
-          {/* Main Image */}
-          <div className="relative overflow-hidden rounded-xl h-[400px] bg-[#f7f3ea]">
-            <img
-              src={photos[currentIndex]}
-              alt={`Gallery image ${currentIndex + 1}`}
-              className={`w-full h-full object-contain transition-opacity duration-800 ${
-                isAnimating ? 'opacity-80' : 'opacity-100'
-              } p-2`}
-            />
-            
-            {/* Previous Image Preview - Right Side */}
-            <div className="absolute top-1/2 -right-16 transform -translate-y-1/2 w-32 h-32 overflow-hidden rounded-xl shadow-lg opacity-50 hover:opacity-100 transition-opacity border-2 border-white bg-white">
-              <img
-                src={photos[(currentIndex - 1 + photos.length) % photos.length]}
-                alt="Previous image preview"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            {/* Navigation Arrows */}
-            <button
-              onClick={goToPrevious}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-theme-primary hover:bg-theme-primary-hover text-white p-2.5 rounded-full transition-colors shadow-lg"
-              aria-label="Previous image"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={goToNext}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-theme-primary hover:bg-theme-primary-hover text-white p-2.5 rounded-full transition-colors shadow-lg"
-              aria-label="Next image"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-
-          {/* Thumbnail Navigation */}
-          <div className="mt-6 flex justify-center gap-3">
-            {photos.map((_, index) => (
-              <button
+        <div className="relative overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10" />
+          <div 
+            ref={scrollRef}
+            className="flex gap-6 overflow-x-hidden"
+          >
+            {photos.map((photo, index) => (
+              <div 
                 key={index}
-                onClick={() => {
-                  if (isAnimating) return;
-                  setIsAnimating(true);
-                  setCurrentIndex(index);
-                  setTimeout(() => setIsAnimating(false), ANIMATION_DURATION);
-                }}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  currentIndex === index
-                    ? 'bg-theme-primary scale-125 shadow-md'
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-                aria-label={`Go to image ${index + 1}`}
-              />
+                className="flex-none w-80 h-96 relative rounded-xl overflow-hidden shadow-lg transform transition-transform hover:scale-105"
+              >
+                <img
+                  src={photo}
+                  alt={`Gallery image ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+              </div>
             ))}
           </div>
         </div>

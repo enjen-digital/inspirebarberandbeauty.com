@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import API_BASE_URL from '../utils/api_url';
 
 interface HeroProps {
@@ -7,21 +6,16 @@ interface HeroProps {
   scrollToSection: (id: string) => void;
 }
 
-interface HeroApiResponse {
-  status: boolean;
-  data: {
-    id: number;
-    file: string;
-    created_at: string;
-    updated_at: string;
-  }[];
-}
-
 export function Hero({ location, scrollToSection }: HeroProps) {
-  const [heroImage, setHeroImage] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(true);
+  const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('right');
+  const [prevLocation, setPrevLocation] = useState(location);
 
   const backgroundImage = location === 'East Towne' ? '/images/east towne.jpg' : '/images/the hub.jpg';
+
+  useEffect(() => {
+    setSlideDirection(location === 'East Towne' ? 'right' : 'left');
+    setPrevLocation(location);
+  }, [location]);
 
   const handleButtonClickTemp = () => {
     console.log(location);
@@ -35,13 +29,9 @@ export function Hero({ location, scrollToSection }: HeroProps) {
     }
   };
 
-  const heroContent = location === 'Waunakee' ? {
-    title: "Transform Your Look With Perfect Brows",
-    subtitle: "Experience the art of microblading and permanent makeup"
-  } : {
-    title: "Elevate Your Beauty With Perfect Lashes",
-    subtitle: "Experience luxury lash treatments that enhance your natural beauty!"
-  };
+  const slideClass = `transform transition-transform duration-500 ${
+    slideDirection === 'right' ? 'translate-x-0' : '-translate-x-0'
+  }`;
 
   return (
     <section id="home" className="relative h-screen">
@@ -52,10 +42,15 @@ export function Hero({ location, scrollToSection }: HeroProps) {
       />
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 h-full flex items-center justify-end">
-          <div className="text-white max-w-2xl text-right">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Professional Hair Care & Styling</h1>
-            <p className="text-xl mb-8 text-theme-accent drop-shadow-md">Experience exceptional service at our {location} location</p>
-            <button
+          <div className="text-white max-w-2xl text-right overflow-hidden">
+            <div className={slideClass}>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+                Professional Hair Care & Styling
+              </h1>
+              <p className="text-xl mb-8 text-theme-accent drop-shadow-md">
+                Experience exceptional service at our {location} location
+              </p>
+              <button
               onClick={() => handleButtonClickTemp()}
               className="bg-theme-primary text-white px-8 py-3 rounded-full hover:bg-theme-primary-hover transition-colors"
             >
@@ -67,3 +62,17 @@ export function Hero({ location, scrollToSection }: HeroProps) {
     </section>
   );
 }
+
+const styles = {
+  slideIn: {
+    opacity: 1,
+    transform: 'translateX(0)',
+  },
+  slideOutLeft: {
+    opacity: 0,
+    transform: 'translateX(-100%)',
+  },
+  slideOutRight: {
+    opacity: 0,
+    transform: 'translateX(100%)',
+  },

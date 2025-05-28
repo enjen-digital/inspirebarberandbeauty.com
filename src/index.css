@@ -2,20 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.theme-waunakee {
-  --primary-color: theme('colors.tan.600');
-  --primary-hover: theme('colors.tan.700');
-  --secondary-color: theme('colors.warmGray.100');
-  --accent-color: theme('colors.tan.200');
-  --text-color: theme('colors.warmGray.600');
-}
-
-.theme-sun-prairie {
-  --primary-color: theme('colors.teal.600');
-  --primary-hover: theme('colors.teal.700');
-  --secondary-color: theme('colors.teal.100');
-  --accent-color: theme('colors.teal.200');
-  --text-color: theme('colors.teal.600');
+:root {
+  --primary-color: theme('colors.burgundy.700');
+  --primary-hover: theme('colors.burgundy.800');
+  --secondary-color: theme('colors.burgundy.100');
+  --accent-color: theme('colors.burgundy.200');
+  --text-color: theme('colors.burgundy.700');
 }
 
 @layer utilities {

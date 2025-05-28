@@ -3,19 +3,18 @@ import { Helmet } from 'react-helmet-async';
 interface SEOProps {
   title?: string;
   description?: string;
-  location?: 'Sun Prairie' | 'Waunakee';
+  location?: 'East Towne' | 'Park Street';
   image?: string;
 }
 
 export function SEO({ 
   title = 'J. Lash Studios - Premium Lash Extensions',
   description = 'Experience luxury lash extensions and microblading services at J. Lash Studios. Professional beauty services in Sun Prairie and Waunakee, WI.',
-  location = 'Sun Prairie',
+  location = 'East Towne',
   image = '/images/jlash logo.jpeg'
 }: SEOProps) {
   const siteUrl = 'https://jlashstudios.com';
   const fullTitle = `${title} | J. Lash Studios ${location}`;
-  const canonicalUrl = `${siteUrl}${location === 'Waunakee' ? '/waunakee' : ''}`;
 
   return (
     <Helmet>

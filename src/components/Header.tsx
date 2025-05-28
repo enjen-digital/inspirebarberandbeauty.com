@@ -4,37 +4,37 @@ import { Menu, X } from 'lucide-react';
 interface HeaderProps {
   isMenuOpen: boolean;
   setIsMenuOpen: (isOpen: boolean) => void;
-  location: 'Sun Prairie' | 'Waunakee';
-  setLocation: (location: 'Sun Prairie' | 'Waunakee') => void;
+  location: 'East Towne' | 'Park Street';
+  setLocation: (location: 'East Towne' | 'Park Street') => void;
   scrollToSection: (id: string) => void;
 }
 
 const LocationToggle = ({ location, setLocation, className = '' }: {
-  location: 'Sun Prairie' | 'Waunakee';
-  setLocation: (location: 'Sun Prairie' | 'Waunakee') => void;
+  location: 'East Towne' | 'Park Street';
+  setLocation: (location: 'East Towne' | 'Park Street') => void;
   className?: string;
 }) => (
   <div className="flex flex-col items-center">
     <div className={`flex items-center space-x-1 text-sm ${className}`}>
       <button
-        onClick={() => setLocation('Sun Prairie')}
+        onClick={() => setLocation('East Towne')}
         className={`px-2 py-1 rounded-l-full whitespace-nowrap transition-colors ${
-          location === 'Sun Prairie'
+          location === 'East Towne'
             ? 'bg-theme-primary text-white'
             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
         }`}
       >
-        Sun Prairie
+        East Towne
       </button>
       <button
-        onClick={() => setLocation('Waunakee')}
+        onClick={() => setLocation('Park Street')}
         className={`px-2 py-1 rounded-r-full transition-colors ${
-          location === 'Waunakee'
+          location === 'Park Street'
             ? 'bg-theme-primary text-white'
             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
         }`}
       >
-        Waunakee
+        Park Street
       </button>
     </div>
     <div className="text-theme-primary text-sm font-medium animate-[pulse-opacity_2s_ease-in-out_infinite] mt-1 hidden md:block">
@@ -48,10 +48,10 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
   const handleButtonClickTemp = () => {
     console.log(location); // Ensure this logs the expected value
 
-    if (location.includes("Sun Prairie")) {
-      window.open("https://www.vagaro.com/jlashstudios/book-now", "_blank");
-    } else if (location.includes("Waunakee")) {
-      window.open("https://www.vagaro.com/jlashstudios-waunakee/book-now", "_blank");
+    if (location.includes("East Towne")) {
+      window.open("https://www.vagaro.com/inspiresalon-easttowne/book-now", "_blank");
+    } else if (location.includes("Park Street")) {
+      window.open("https://www.vagaro.com/inspiresalon-parkst/book-now", "_blank");
     } else {
       window.location.href = "/"; // Internal navigation to home
     }

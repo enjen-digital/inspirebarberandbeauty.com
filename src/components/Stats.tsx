@@ -52,26 +52,26 @@ export function Stats({ stats, location }: StatsProps) {
   const displayStats = apiStats || stats;
 
   return (
-    <section id="stats" className="py-16 bg-theme-secondary">
+    <section id="stats" className="py-16 bg-[#f7f3ea]">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center">
             <div className="text-4xl font-bold text-theme-primary mb-2" key={displayStats.clients}>
               {displayStats.clients}+
             </div>
-            <p className="text-theme-text">Happy Clients</p>
+            <p className="text-gray-700">Happy Clients</p>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-theme-primary mb-2" key={displayStats.experience}>
               {displayStats.experience}+
             </div>
-            <p className="text-theme-text">Years Experience</p>
+            <p className="text-gray-700">Years Experience</p>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-theme-primary mb-2" key={displayStats.satisfaction}>
               {displayStats.satisfaction}%
             </div>
-            <p className="text-theme-text">Client Satisfaction</p>
+            <p className="text-gray-700">Client Satisfaction</p>
           </div>
         </div>
       </div>

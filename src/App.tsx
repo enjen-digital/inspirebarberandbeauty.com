@@ -4,7 +4,6 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Stats } from "./components/Stats";
 import { Team } from "./components/Team";
-import { Services } from "./components/Services";
 import { Gallery } from "./components/Gallery";
 import { FAQ } from "./components/FAQ";
 import { Footer } from "./components/Footer";
@@ -15,8 +14,6 @@ import "react-toastify/dist/ReactToastify.css";
 // Pages
 import ArtistAvailability from "./components/ArtistAvailability";
 
-// Data
-import { services } from "./data/services";
 import { teamMembers } from "./data/team";
 
 interface LocationTheme {
@@ -46,8 +43,6 @@ export const themes: Record<LocationName, LocationTheme> = {
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [location, setLocation] = useState<LocationName>("East Towne");
-  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
-  const [expandedService, setExpandedService] = useState<string | null>(null);
   const statsRef = useRef<HTMLDivElement>(null);
   const [stats, setStats] = useState({ clients: 0, experience: 0, satisfaction: 0 });
   const hasAnimated = useRef(false);
@@ -127,14 +122,6 @@ function App() {
                   <Stats stats={stats} location={location} />
                 </div>
                 <Team members={teamMembers} location={location} />
-                <Services
-                  services={services}
-                  expandedCategory={expandedCategory}
-                  setExpandedCategory={setExpandedCategory}
-                  expandedService={expandedService}
-                  setExpandedService={setExpandedService}
-                  location={location}
-                />
                 <Gallery location={location} />
                 <FAQ />
               </div>

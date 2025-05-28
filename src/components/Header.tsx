@@ -78,6 +78,7 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
 
           <nav className="hidden md:flex items-center space-x-8">
             <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-theme-primary transition-colors">Home</button>
+            <button onClick={() => scrollToSection('squad')} className="text-gray-700 hover:text-theme-primary transition-colors">Squad</button>
             <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-theme-primary transition-colors">Services</button>
             <button onClick={() => scrollToSection('gallery')} className="text-gray-700 hover:text-theme-primary transition-colors">Gallery</button>
             <button onClick={() => scrollToSection('faq')} className="text-gray-700 hover:text-theme-primary transition-colors">FAQ</button>
@@ -119,6 +120,7 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
             </div>
             <nav className="flex flex-col space-y-4">
               <button onClick={() => scrollToSection('home')} className="text-left text-gray-700 hover:text-theme-primary transition-colors py-2">Home</button>
+              <button onClick={() => scrollToSection('squad')} className="text-left text-gray-700 hover:text-theme-primary transition-colors py-2">Squad</button>
               <button onClick={() => scrollToSection('services')} className="text-left text-gray-700 hover:text-theme-primary transition-colors py-2">Services</button>
               <button onClick={() => scrollToSection('gallery')} className="text-left text-gray-700 hover:text-theme-primary transition-colors py-2">Gallery</button>
               <button onClick={() => scrollToSection('faq')} className="text-left text-gray-700 hover:text-theme-primary transition-colors py-2">FAQ</button>

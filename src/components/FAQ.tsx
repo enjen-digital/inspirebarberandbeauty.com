@@ -51,7 +51,7 @@ export function FAQ() {
               className="bg-white rounded-lg shadow-md overflow-hidden"
             >
               <button
-                className="w-full px-6 py-4 flex items-center justify-between bg-beige-100 hover:bg-beige-200 transition-colors"
+                className="w-full px-6 py-4 flex items-center justify-between bg-[#f7f3ea] hover:bg-[#f0e6d5] transition-colors"
                 onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
               >
                 <h3 className="text-lg font-medium text-gray-900 text-left">{faq.question}</h3>

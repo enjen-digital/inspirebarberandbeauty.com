@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const photos = [
   '/images/gallery1.jpg',
@@ -15,26 +16,81 @@ const photos = [
 ];
 
 export function Photos() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const goToNext = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
+    setTimeout(() => setIsAnimating(false), 500);
+  };
+
+  const goToPrevious = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + photos.length) % photos.length);
+    setTimeout(() => setIsAnimating(false), 500);
+  };
+
+  useEffect(() => {
+    const timer = setInterval(goToNext, 5000); // Auto advance every 5 seconds
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="photos" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12">Our Work</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {photos.map((photo, index) => (
-            <div 
-              key={index}
-              className="relative aspect-square overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
+        <div className="relative max-w-4xl mx-auto">
+          {/* Main Image */}
+          <div className="relative aspect-[3/2] overflow-hidden rounded-lg shadow-xl">
+            <img
+              src={photos[currentIndex]}
+              alt={`Gallery image ${currentIndex + 1}`}
+              className={`w-full h-full object-cover transition-opacity duration-500 ${
+                isAnimating ? 'opacity-80' : 'opacity-100'
+              }`}
+            />
+            
+            {/* Navigation Arrows */}
+            <button
+              onClick={goToPrevious}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+              aria-label="Previous image"
             >
-              <img
-                src={photo}
-                alt={`Gallery image ${index + 1}`}
-                className="w-full h-full object-cover"
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={goToNext}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+              aria-label="Next image"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Thumbnail Navigation */}
+          <div className="mt-4 flex justify-center gap-2">
+            {photos.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  if (isAnimating) return;
+                  setIsAnimating(true);
+                  setCurrentIndex(index);
+                  setTimeout(() => setIsAnimating(false), 500);
+                }}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  currentIndex === index
+                    ? 'bg-theme-primary w-4'
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Go to image ${index + 1}`}
               />
-              <div className="absolute inset-0 bg-black/20 hover:bg-black/30 transition-colors"></div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
-}

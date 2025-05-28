@@ -42,7 +42,7 @@ export function Photos() {
     <section id="photos" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12">Our Work</h2>
-        <div className="relative max-w-2xl mx-auto">
+        <div className="relative max-w-3xl mx-auto">
           {/* Main Image */}
           <div className="relative overflow-hidden rounded-lg shadow-xl h-[400px]">
             <img
@@ -52,6 +52,15 @@ export function Photos() {
                 isAnimating ? 'opacity-80' : 'opacity-100'
               }`}
             />
+            
+            {/* Next Image Preview */}
+            <div className="absolute top-1/2 -right-16 transform -translate-y-1/2 w-32 h-32 overflow-hidden rounded-lg shadow-md opacity-50 hover:opacity-100 transition-opacity">
+              <img
+                src={photos[(currentIndex + 1) % photos.length]}
+                alt="Next image preview"
+                className="w-full h-full object-cover"
+              />
+            </div>
             
             {/* Navigation Arrows */}
             <button

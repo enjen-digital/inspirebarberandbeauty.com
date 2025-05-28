@@ -5,7 +5,6 @@ import { Hero } from "./components/Hero";
 import { Stats } from "./components/Stats";
 import { Stylists } from "./components/Squad";
 import { Services } from "./components/Services";
-import { Gallery } from "./components/Gallery";
 import { FAQ } from "./components/FAQ";
 import { Footer } from "./components/Footer";
 import { SEO } from "./components/SEO";
@@ -134,7 +133,6 @@ function App() {
                   setExpandedService={setExpandedService}
                   location={location}
                 />
-                <Gallery location={location} />
                 <FAQ />
               </div>
             }

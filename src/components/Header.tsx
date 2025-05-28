@@ -80,7 +80,6 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
             <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-theme-primary transition-colors">Home</button>
             <button onClick={() => scrollToSection('stylists')} className="text-gray-700 hover:text-theme-primary transition-colors">Stylists</button>
             <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-theme-primary transition-colors">Services</button>
-            <button onClick={() => scrollToSection('gallery')} className="text-gray-700 hover:text-theme-primary transition-colors">Gallery</button>
             <button onClick={() => scrollToSection('faq')} className="text-gray-700 hover:text-theme-primary transition-colors">FAQ</button>
             <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-theme-primary transition-colors">Contact</button>
           </nav>
@@ -122,7 +121,6 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
               <button onClick={() => scrollToSection('home')} className="text-left text-gray-700 hover:text-theme-primary transition-colors py-2">Home</button>
               <button onClick={() => scrollToSection('stylists')} className="text-left text-gray-700 hover:text-theme-primary transition-colors py-2">Stylists</button>
               <button onClick={() => scrollToSection('services')} className="text-left text-gray-700 hover:text-theme-primary transition-colors py-2">Services</button>
-              <button onClick={() => scrollToSection('gallery')} className="text-left text-gray-700 hover:text-theme-primary transition-colors py-2">Gallery</button>
               <button onClick={() => scrollToSection('faq')} className="text-left text-gray-700 hover:text-theme-primary transition-colors py-2">FAQ</button>
               <button onClick={() => scrollToSection('contact')} className="text-left text-gray-700 hover:text-theme-primary transition-colors py-2">Contact</button>
               <button

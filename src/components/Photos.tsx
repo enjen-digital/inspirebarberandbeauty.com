@@ -18,7 +18,7 @@ export function Photos() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>();
   const isPaused = useRef(false);
-  const scrollSpeed = 0.5; // Pixels per frame - lower number = slower scroll
+  const scrollSpeed = 0.25; // Pixels per frame - lower number = slower scroll
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;

@@ -100,6 +100,21 @@ export function Footer({ location }: FooterProps) {
             &copy; {new Date().getFullYear()} Inspire Barber & Beauty Salon. All rights
             reserved.
           </p>
+          <div className="flex flex-col items-center mt-4">
+            <span className="text-theme-accent text-sm">Powered By</span>
+            <a 
+              href="https://enjendigital.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <img
+                src="/images/enjen logo.png"
+                alt="Enjen"
+                className="h-14 w-auto brightness-0 invert opacity-75 hover:opacity-100 transition-opacity"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 import API_BASE_URL from '../utils/api_url';
 
 interface FooterProps {
-  location: "Sun Prairie" | "Waunakee";
+  location: "East Towne" | "Park Street";
 }
 
 export function Footer({ location }: FooterProps) {
@@ -51,36 +51,36 @@ export function Footer({ location }: FooterProps) {
             <div className="space-y-4">
               <div>
                 <h5 className="font-semibold text-theme-accent mb-1">
-                  Sun Prairie
+                  East Towne
                 </h5>
                 <a
-                  href="https://maps.google.com/?q=242+E+Main+St,+Suite+4,+Sun+Prairie,+WI+53590"
+                  href="https://maps.google.com/?q=89+W+Towne+Mall,+Madison,+WI+53719"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start text-theme-accent hover:text-white transition-colors"
                 >
                   <MapPin className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
                   <span>
-                    242 E Main St, Suite 4<br />
-                    Sun Prairie, WI 53590
+                    89 W Towne Mall<br />
+                    Madison, WI 53719
                   </span>
                 </a>
               </div>
               <div>
                 <h5 className="font-semibold text-theme-accent mb-1">
-                  Waunakee
+                  Park Street
                 </h5>
                 <a
-                  href="https://maps.google.com/?q=204+S+Century+Ave,+A3,+Waunakee,+WI+53597"
+                  href="https://maps.google.com/?q=1313+S+Park+St,+Madison,+WI+53715"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start text-theme-accent hover:text-white transition-colors"
                 >
                   <MapPin className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
                   <span>
-                    204 S Century Ave, A3
+                    1313 S Park St
                     <br />
-                    Waunakee, WI 53597
+                    Madison, WI 53715
                   </span>
                 </a>
               </div>

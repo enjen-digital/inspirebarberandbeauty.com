@@ -3,7 +3,7 @@ import axios from 'axios';
 import API_BASE_URL from '../utils/api_url';
 
 interface HeroProps {
-  location: 'Sun Prairie' | 'Waunakee';
+  location: 'East Towne' | 'Park Street';
   scrollToSection: (id: string) => void;
 }
 
@@ -50,16 +50,16 @@ export function Hero({ location, scrollToSection }: HeroProps) {
   const handleButtonClickTemp = () => {
     console.log(location); // Ensure this logs the expected value
   
-    if (location.includes("Sun Prairie")) {
+    if (location.includes("East Towne")) {
       window.open("https://www.vagaro.com/jlashstudios/book-now", "_blank");
-    } else if (location.includes("Waunakee")) {
+    } else if (location.includes("Park Street")) {
       window.open("https://www.vagaro.com/jlashstudios-waunakee/book-now", "_blank");
     } else {
       window.location.href = "/"; // Internal navigation to home
     }
   };
   //temp conditiion
-  const backgroundImage = heroImage || (location === 'Waunakee' ? '/images/brow.jpg' : '/images/hero.jpg');
+  const backgroundImage = heroImage || (location === 'Park Street' ? '/images/brow.jpg' : '/images/hero.jpg');
 
 
   const heroContent = location === 'Waunakee' ? {

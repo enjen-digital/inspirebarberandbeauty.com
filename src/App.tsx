@@ -30,16 +30,16 @@ export type LocationTheme = {
 
 export const themes: Record<LocationName, LocationTheme> = {
   "East Towne": {
-    primary: "teal",
-    secondary: "teal",
-    accent: "teal",
-    text: "teal",
+    primary: "burgundy",
+    secondary: "beige",
+    accent: "burgundy",
+    text: "burgundy",
   },
   "Park Street": {
-    primary: "tan",
-    secondary: "warmGray",
-    accent: "amber",
-    text: "warmGray",
+    primary: "burgundy",
+    secondary: "beige",
+    accent: "burgundy",
+    text: "burgundy",
   },
 };
 

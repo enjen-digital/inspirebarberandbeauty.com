@@ -73,7 +73,7 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
 
           <div className="hidden md:block">
             <button 
-              onClick={() => {}}
+              onClick={() => scrollToSection('services')}
               className="bg-theme-primary text-white px-6 py-2 rounded-full hover:bg-theme-primary-hover transition-colors"
             >
               Book Now
@@ -111,7 +111,7 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
               <button onClick={() => scrollToSection('faq')} className="text-left text-gray-700 hover:text-theme-primary transition-colors py-2">FAQ</button>
               <button onClick={() => scrollToSection('contact')} className="text-left text-gray-700 hover:text-theme-primary transition-colors py-2">Contact</button>
               <button
-                onClick={() => {}}
+                onClick={() => scrollToSection('services')}
                 className="w-full bg-theme-primary text-white px-6 py-2 rounded-full hover:bg-theme-primary-hover transition-colors mt-2"
               >
                 Book Now

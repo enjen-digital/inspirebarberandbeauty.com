@@ -58,7 +58,7 @@ export function Hero({ location, scrollToSection }: HeroProps) {
                 {locationContent[location].subtitle}
               </p>
               <button
-                onClick={() => {}}
+                onClick={() => scrollToSection('services')}
                 className="bg-theme-primary text-white px-8 py-3 rounded-full hover:bg-theme-primary-hover transition-colors"
               >
                 Book Now

@@ -19,8 +19,6 @@ import ArtistAvailability from "./components/ArtistAvailability";
 import { services } from "./data/services";
 import { teamMembers } from "./data/team";
 
-export type LocationName = "East Towne" | "Park Street";
-
 export type LocationTheme = {
   primary: string;
   secondary: string;
@@ -28,25 +26,25 @@ export type LocationTheme = {
   text: string;
 };
 
-export const themes: Record<LocationName, LocationTheme> = {
-  "East Towne": {
-    primary: "burgundy",
-    secondary: "beige",
-    accent: "burgundy",
-    text: "burgundy",
+export const themes: Record<"Sun Prairie" | "Waunakee", LocationTheme> = {
+  "Sun Prairie": {
+    primary: "teal",
+    secondary: "teal",
+    accent: "teal",
+    text: "teal",
   },
-  "Park Street": {
-    primary: "burgundy",
-    secondary: "beige",
-    accent: "burgundy",
-    text: "burgundy",
+  "Waunakee": {
+    primary: "tan",
+    secondary: "warmGray",
+    accent: "amber",
+    text: "warmGray",
   },
 };
 
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [location, setLocation] = useState<LocationName>("East Towne");
+  const [location, setLocation] = useState<"Sun Prairie" | "Waunakee">("Sun Prairie");
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [expandedService, setExpandedService] = useState<string | null>(null);
   const statsRef = useRef<HTMLDivElement>(null);

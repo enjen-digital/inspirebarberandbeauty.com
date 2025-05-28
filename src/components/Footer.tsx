@@ -34,13 +34,13 @@ export function Footer({ location }: FooterProps) {
                 href="tel:6089573140"
                 className="flex items-center text-theme-accent hover:text-white transition-colors"
               >
-                <Phone className="w-4 h-4 mr-2" /> (608) 957-3140
+                <Phone className="w-4 h-4 mr-2" /> (608) 555-0123
               </a>
               <a
-                href="mailto:jenny@jlashstudios.com"
+                href="mailto:info@inspiresalon.com"
                 className="flex items-center text-theme-accent hover:text-white transition-colors"
               >
-                <Mail className="w-4 h-4 mr-2" /> jenny@jlashstudios.com
+                <Mail className="w-4 h-4 mr-2" /> info@inspiresalon.com
               </a>
             </div>
           </div>
@@ -87,49 +87,19 @@ export function Footer({ location }: FooterProps) {
             </div>
           </div>
           <div>
-            <h4 className="text-xl font-bold mb-4 text-theme-accent">
-              Follow Us
-            </h4>
-            <div className="flex space-x-4">
-              <a
-                href="https://www.instagram.com/j.lashbyjenny/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-theme-accent hover:text-white transition-colors transform hover:scale-110"
-              >
-                <Instagram className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.facebook.com/jlashbyjenny"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-theme-accent hover:text-white transition-colors transform hover:scale-110"
-              >
-                <Facebook className="w-6 h-6" />
-              </a>
-            </div>
+            <h4 className="text-xl font-bold mb-4 text-theme-accent">Hours</h4>
+            <ul className="space-y-2 text-theme-accent">
+              <li>Monday - Friday: 9am - 8pm</li>
+              <li>Saturday: 9am - 6pm</li>
+              <li>Sunday: 10am - 5pm</li>
+            </ul>
           </div>
         </div>
         <div className="border-t border-theme-accent/20 mt-8 pt-8 text-center">
           <p className="text-theme-accent">
-            &copy; {new Date().getFullYear()} J. Lash Studios. All rights
+            &copy; {new Date().getFullYear()} Inspire Barber & Beauty Salon. All rights
             reserved.
           </p>
-          <div className="flex flex-col items-center">
-            <span className="text-theme-accent text-sm -mb-4 relative z-10">Powered By</span>
-            <a 
-              href="https://enjendigital.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block"
-            >
-              <img
-                src="/images/enjen logo.png"
-                alt="Enjen"
-                className="h-14 w-auto brightness-0 invert opacity-75 hover:opacity-100 transition-opacity relative z-0"
-              />
-            </a>
-          </div>
         </div>
       </div>
     </footer>

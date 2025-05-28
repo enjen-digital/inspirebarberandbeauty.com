@@ -8,13 +8,14 @@ interface SEOProps {
 }
 
 export function SEO({ 
-  title = 'J. Lash Studios - Premium Lash Extensions',
-  description = 'Experience luxury lash extensions and microblading services at J. Lash Studios. Professional beauty services in Sun Prairie and Waunakee, WI.',
+  title = 'Inspire Barber & Beauty Salon - Professional Hair Care Services',
+  description = 'Experience exceptional hair care and beauty services at Inspire Barber & Beauty Salon. Professional cuts, styling, and beauty treatments in Madison, WI.',
   location = 'East Towne',
-  image = '/images/jlash logo.jpeg'
+  image = '/images/inspire logo.png'
 }: SEOProps) {
-  const siteUrl = 'https://jlashstudios.com';
-  const fullTitle = `${title} | J. Lash Studios ${location}`;
+  const siteUrl = 'https://inspiresalon.com';
+  const fullTitle = `${title} | Inspire Barber & Beauty Salon ${location}`;
+  const canonicalUrl = `${siteUrl}${location === 'Park Street' ? '/park-street' : ''}`;
 
   return (
     <Helmet>
@@ -37,8 +38,8 @@ export function SEO({
       <meta name="twitter:image" content={`${siteUrl}${image}`} />
 
       {/* Additional Meta Tags */}
-      <meta name="keywords" content="lash extensions, microblading, permanent makeup, beauty services, Wisconsin, Sun Prairie, Waunakee" />
-      <meta name="author" content="J. Lash Studios" />
+      <meta name="keywords" content="barber shop, hair salon, haircuts, styling, beauty services, Madison, Wisconsin" />
+      <meta name="author" content="Inspire Barber & Beauty Salon" />
       <meta name="robots" content="index, follow" />
       <meta name="language" content="English" />
 
@@ -47,7 +48,7 @@ export function SEO({
       <meta name="geo.placename" content={`${location}, Wisconsin`} />
 
       {/* Favicon */}
-      <link rel="icon" type="image/png" href="/images/jlash logo no background.png" />
+      <link rel="icon" type="image/png" href="/images/inspire logo.png" />
     </Helmet>
   );
 }

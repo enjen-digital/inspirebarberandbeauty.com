@@ -53,10 +53,10 @@ export function Services({
         {services.map((category, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-md overflow-hidden border border-beige-200"
+            className="bg-white rounded-lg shadow-md overflow-hidden"
           >
             <button
-              className="w-full px-6 py-4 flex items-center justify-between bg-burgundy-100 hover:bg-burgundy-200 transition-colors"
+              className="w-full px-6 py-4 flex items-center justify-between bg-beige-100 hover:bg-beige-200 transition-colors"
               onClick={() =>
                 setExpandedCategory(
                   expandedCategory === category.category

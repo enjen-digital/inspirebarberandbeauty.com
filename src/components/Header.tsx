@@ -62,11 +62,11 @@ export function Header({ isMenuOpen, setIsMenuOpen, location, setLocation, scrol
     <header className="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-12">
             <img 
               src="/images/inspire logo.png" 
               alt="Inspire Barber & Beauty Salon Logo" 
-              className={`h-16 w-auto object-contain cursor-pointer transition-all duration-300 ${
+              className={`h-20 w-auto object-contain cursor-pointer transition-all duration-300 ${
                 location === 'Sun Prairie' 
                   ? 'hue-rotate-[330deg] brightness-75'
                   : 'hue-rotate-[180deg]'

@@ -41,20 +41,21 @@ export function Photos() {
   return (
     <section id="photos" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">Our Work</h2>
-        <div className="relative max-w-3xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-4">Our Work</h2>
+        <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Experience our dedication to excellence through our portfolio of transformative styles</p>
+        <div className="relative max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.1)] border border-gray-100">
           {/* Main Image */}
-          <div className="relative overflow-hidden rounded-lg shadow-xl h-[400px]">
+          <div className="relative overflow-hidden rounded-xl h-[400px] bg-[#f7f3ea]">
             <img
               src={photos[currentIndex]}
               alt={`Gallery image ${currentIndex + 1}`}
               className={`w-full h-full object-contain transition-opacity duration-500 ${
                 isAnimating ? 'opacity-80' : 'opacity-100'
-              }`}
+              } p-2`}
             />
             
             {/* Next Image Preview - Left Side */}
-            <div className="absolute top-1/2 -left-16 transform -translate-y-1/2 w-32 h-32 overflow-hidden rounded-lg shadow-md opacity-50 hover:opacity-100 transition-opacity">
+            <div className="absolute top-1/2 -left-16 transform -translate-y-1/2 w-32 h-32 overflow-hidden rounded-xl shadow-lg opacity-50 hover:opacity-100 transition-opacity border-2 border-white bg-white">
               <img
                 src={photos[(currentIndex + 1) % photos.length]}
                 alt="Next image preview"
@@ -65,14 +66,14 @@ export function Photos() {
             {/* Navigation Arrows */}
             <button
               onClick={goToPrevious}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 rounded-full transition-colors"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-theme-primary hover:bg-theme-primary-hover text-white p-2.5 rounded-full transition-colors shadow-lg"
               aria-label="Previous image"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={goToNext}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 rounded-full transition-colors"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-theme-primary hover:bg-theme-primary-hover text-white p-2.5 rounded-full transition-colors shadow-lg"
               aria-label="Next image"
             >
               <ChevronRight className="w-5 h-5" />
@@ -80,7 +81,7 @@ export function Photos() {
           </div>
 
           {/* Thumbnail Navigation */}
-          <div className="mt-4 flex justify-center gap-2">
+          <div className="mt-6 flex justify-center gap-3">
             {photos.map((_, index) => (
               <button
                 key={index}
@@ -90,9 +91,9 @@ export function Photos() {
                   setCurrentIndex(index);
                   setTimeout(() => setIsAnimating(false), 500);
                 }}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   currentIndex === index
-                    ? 'bg-theme-primary w-4'
+                    ? 'bg-theme-primary scale-125 shadow-md'
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Go to image ${index + 1}`}

@@ -26,7 +26,7 @@ export function Hero({ location, scrollToSection }: HeroProps) {
   const [isAnimating, setIsAnimating] = useState(false);
   const [prevLocation, setPrevLocation] = useState(location);
 
-  const backgroundImage = location === 'East Towne' ? '/images/east towne.jpg' : '/images/the hub.jpg';
+  const backgroundImage = location === 'East Towne' ? '/images/inspirestorefront.jpeg' : '/images/the hub.jpg';
 
   useEffect(() => {
     if (prevLocation !== location) {
